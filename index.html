@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A student prototype for finding blood donors by blood group and location.">
+  <title>LifeLink | Blood Donor Directory</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><span class="brand-mark">+</span><span>LifeLink</span></div>
+    <nav aria-label="Main navigation">
+      <a href="#search">Find Donors</a>
+      <a href="#how-it-works">How It Works</a>
+      <a href="#register">Register</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <p class="eyebrow">BLOOD DONOR DIRECTORY · STUDENT PROTOTYPE</p>
+        <h1>One search can<br><span>make a difference.</span></h1>
+        <p class="hero-copy">Find demo donor listings by blood group and city. This prototype demonstrates how a directory could help people connect with potential blood donors.</p>
+        <a class="button button-light" href="#search">Find a donor <span aria-hidden="true">→</span></a>
+        <div class="hero-note"><span class="pulse-dot"></span> A small connection can make a big impact.</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="blood-drop"><span>+</span></div>
+        <div class="float-card card-top"><span class="mini-icon">♥</span><div><strong>Give hope</strong><small>Be there for someone</small></div></div>
+        <div class="float-card card-bottom"><span class="check-icon">✓</span><div><strong>Community powered</strong><small>People helping people</small></div></div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Prototype overview">
+      <div><strong id="donor-count">8</strong><span>Demo donor profiles</span></div>
+      <div><strong>8</strong><span>Blood groups represented</span></div>
+      <div><strong>1</strong><span>Shared goal: help others</span></div>
+    </section>
+
+    <section class="section search-section" id="search">
+      <div class="section-heading">
+        <p class="eyebrow">SEARCH DIRECTORY</p>
+        <h2>Find a potential donor</h2>
+        <p>Choose a blood group, enter a city, or combine both filters.</p>
+      </div>
+      <form id="search-form" class="search-panel">
+        <label>Blood group
+          <select id="blood-group">
+            <option value="">All blood groups</option>
+            <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+            <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+          </select>
+        </label>
+        <label>City or location
+          <input id="location" type="text" placeholder="e.g. Hyderabad" autocomplete="off">
+        </label>
+        <button class="button button-primary" type="submit">Search donors</button>
+        <button class="button button-outline" type="button" id="reset-search">Reset</button>
+      </form>
+      <div class="results-top"><h3>Directory results</h3><p id="results-count" aria-live="polite">Showing 8 demo profiles</p></div>
+      <div id="donor-results" class="donor-grid"></div>
+      <p class="demo-warning"><strong>Important:</strong> These are fictional demo profiles, not real donors. This prototype does not verify donor eligibility or availability. For a real emergency, contact a hospital or authorized blood bank.</p>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+      <div class="section-heading">
+        <p class="eyebrow">SIMPLE BY DESIGN</p>
+        <h2>How LifeLink works</h2>
+        <p>A clear process designed to make searching easy.</p>
+      </div>
+      <div class="steps">
+        <article class="step-card"><span class="step-number">01</span><div class="step-icon">⌕</div><h3>Search</h3><p>Select a blood group and enter a city to narrow the directory.</p></article>
+        <article class="step-card"><span class="step-number">02</span><div class="step-icon">♡</div><h3>Review</h3><p>Review matching demo profiles and their listed location.</p></article>
+        <article class="step-card"><span class="step-number">03</span><div class="step-icon">＋</div><h3>Connect safely</h3><p>A real version would use consent, verified contact details, and privacy safeguards.</p></article>
+      </div>
+    </section>
+
+    <section class="register-section" id="register">
+      <div class="register-copy">
+        <p class="eyebrow">JOIN THE COMMUNITY</p>
+        <h2>Want to be part<br>of the solution?</h2>
+        <p>Try the registration form to see the prototype interaction. Submitted entries stay only in this browser using local storage; they are not sent to a server.</p>
+        <div class="privacy-note"><span>🔒</span><span><strong>Privacy-first demo</strong><br>Use fictional information while testing.</span></div>
+      </div>
+      <form id="register-form" class="register-form">
+        <h3>Donor registration demo</h3>
+        <label>Full name <input id="donor-name" type="text" placeholder="Enter a demo name" required maxlength="60"></label>
+        <div class="form-row">
+          <label>Blood group
+            <select id="donor-blood" required>
+              <option value="">Select group</option>
+              <option>A+</option><option>A-</option><option>B+</option><option>B-</option>
+              <option>AB+</option><option>AB-</option><option>O+</option><option>O-</option>
+            </select>
+          </label>
+          <label>City <input id="donor-city" type="text" placeholder="e.g. Warangal" required maxlength="60"></label>
+        </div>
+        <label>Availability
+          <select id="donor-availability" required><option value="Please contact to confirm">Please contact to confirm</option><option value="Available for contact">Available for contact</option><option value="Currently unavailable">Currently unavailable</option></select>
+        </label>
+        <button class="button button-primary full-width" type="submit">Add demo profile</button>
+        <p id="form-message" class="form-message" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="brand"><span class="brand-mark">+</span><span>LifeLink</span></div>
+    <p>Educational prototype · Not a real blood donation service</p>
+    <a href="#top" aria-label="Back to top">Back to top ↑</a>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
